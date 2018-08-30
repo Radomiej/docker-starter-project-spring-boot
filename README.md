@@ -1,5 +1,22 @@
 # docker-starter-project-spring-boot
 
+# How-to-start
+
+## Prepare Docker(Windows)
+
+1. Install Docker for Windows
+
+2. Go to settings: select **"on"** : "Expose deamon on tcp://localhost:2375 without TLS"
+
+## Prepare Docker(Linux)
+
+1. Install Docker for Ubuntu(or other system)(I tested it on Ubuntu Trusty 14.04 (LTS) and VMWare): [https://docs.docker.com/install/linux/docker-ce/ubuntu/]
+
+2. //TODO
+
+## Prepare InteliJ 
+
+1. Install plugin for 
 
 # Comments
 
