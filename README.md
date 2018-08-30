@@ -1,6 +1,6 @@
 # docker-starter-project-spring-boot
 
-# How-to-start
+# How-to-start (dev-stage)
 
 ## Prepare Docker(Windows)
 
@@ -16,7 +16,11 @@
 
 ## Prepare InteliJ 
 
-1. Install plugin for 
+1. Install plugin for Docker.
+
+2. Import this project.
+
+3. Connect with Docker via tcp deamon.
 
 # Comments
 
