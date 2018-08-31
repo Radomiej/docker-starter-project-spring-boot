@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.util.concurrent.CountDownLatch;
 
-//@Service
+@Service
 public class RedisEventBusService {
     private static final Logger LOGGER = LoggerFactory.getLogger(RedisEventBusService.class);
 

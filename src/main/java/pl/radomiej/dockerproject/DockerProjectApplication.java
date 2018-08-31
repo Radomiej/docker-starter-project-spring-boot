@@ -15,9 +15,10 @@ public class DockerProjectApplication {
     private static final Logger LOGGER = LoggerFactory.getLogger(RedisEventBusService.class);
 
     public static void main(String[] args) throws InterruptedException {
-        for (Object o : System.getenv().entrySet()) {
-            System.out.println(o);
-        }
+        //Hack? Allow to play redis and elasticsearch together(Netty clients issue)
+        //TODO change to manualy create netty transport client or specyfi manually processour amount?
+        System.setProperty("es.set.netty.runtime.available.processors","false");
+
         ApplicationContext ctx = SpringApplication.run(DockerProjectApplication.class, args);
         StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
         CountDownLatch latch = ctx.getBean(CountDownLatch.class);
