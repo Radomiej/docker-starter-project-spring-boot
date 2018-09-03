@@ -1,4 +1,4 @@
-package pl.radomiej.dockerproject.services.redis;
+package pl.radomiej.dockerproject.service.redis;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,21 +11,14 @@ import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import java.util.concurrent.CountDownLatch;
 
 @Service
 public class RedisEventBusService {
     private static final Logger LOGGER = LoggerFactory.getLogger(RedisEventBusService.class);
 
     @Bean
-    CountDownLatch latch() {
-        return new CountDownLatch(1);
-    }
-
-    @Bean
-    RedisEventReceiver receiver(CountDownLatch latch) {
-        return new RedisEventReceiver(latch);
+    RedisEventReceiver receiver() {
+        return new RedisEventReceiver();
     }
 
     @Bean
@@ -47,8 +40,6 @@ public class RedisEventBusService {
 
     @Autowired
     private StringRedisTemplate template;
-    @Autowired
-    private CountDownLatch latch;
 
 
 }
