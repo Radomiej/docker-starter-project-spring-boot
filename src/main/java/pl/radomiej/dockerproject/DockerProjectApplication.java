@@ -13,7 +13,12 @@ public class DockerProjectApplication {
     private static final Logger LOGGER = LoggerFactory.getLogger(RedisEventBusService.class);
 
     public static void main(String[] args) throws InterruptedException {
-        ApplicationContext ctx = SpringApplication.run(DockerProjectApplication.class, args);
+        //Hack for fast deployment in kubernatest app wizard
+        String[] fixSingleArg = args;
+        if(args.length == 1) fixSingleArg = args[0].split(" ");
+
+
+        ApplicationContext ctx = SpringApplication.run(DockerProjectApplication.class, fixSingleArg);
         StringRedisTemplate template = ctx.getBean(StringRedisTemplate.class);
 
         LOGGER.info("Sending message...");
