@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
   docker-redis:
@@ -10,7 +10,7 @@ services:
     ports:
     - 0.0.0.0:27017:27017
   docker-spring-boot-rest:
-    image: maven-springboot
+    image: "maven-springboot"
     build: .
     depends_on:
     - docker-mongodb
