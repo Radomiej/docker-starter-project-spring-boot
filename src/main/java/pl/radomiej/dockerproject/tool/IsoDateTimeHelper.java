@@ -8,9 +8,9 @@ import org.joda.time.format.ISODateTimeFormat;
 public class IsoDateTimeHelper {
     private static DateTimeFormatter formatter = ISODateTimeFormat.dateTime();
 
-    public static String getStringDateSinceNow(int milisFromNow) {
+    public static String getStringDateSinceNow(int millisFromNow) {
         DateTime dt = new DateTime(DateTimeZone.UTC);
-        dt.plus(milisFromNow);
+        dt.plus(millisFromNow);
         String textDate = formatter.print(dt);
         return  textDate;
 
